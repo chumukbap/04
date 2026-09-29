@@ -2,23 +2,19 @@
 
 int main(void)
 {
-    unsigned int x;
-    int count = 0;
+    int sec;
+    int hour;
+    int min;
+    int remain_sec;
 
-    printf("input a number : ");
-    scanf("%u", &x);
+    printf("Input the second: ");
+    scanf("%d", &sec);
 
-    for (int i = 0; i < 32; i++)
-    {
-        if (x & 1)
-        {
-            count++;
-        }
+    hour = sec / 3600;
+    min = (sec % 3600) / 60;
+    remain_sec = sec % 60;
 
-        x = x >> 1;
-    }
-
-    printf("The result is %d\n", count);
+    printf("The time is %d:%d:%d\n", hour, min, remain_sec);
 
     return 0;
 }
